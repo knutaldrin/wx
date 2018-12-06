@@ -1,4 +1,37 @@
 <!doctype html>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<title>Hello from Flask</title>
-<h1>Hello from Flask!</h1>
+<html>
+		<head>
+				<meta charset="utf-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+				<title>ENDU Wx</title>
+
+				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		</head>
+		<body>
+				<header>
+						<div class="navbar navbar-dark bg-dark shadow-sm">
+								<div class="container d-flex justify-content-between">
+										<a href="#" class="navbar-brand d-flex align-items-center">
+												<h1>ENDU Wx</h1>
+										</a>
+								</div>
+						</div>
+				</header>
+
+				<p>Next setting: {{next_setting}}</p>
+				<p>Previous rising: {{prev_rising}}</p>
+
+				<div class="container">
+						<div class="row">
+								<div class="col">METAR</div>
+								<div class="col">@ {{metar_time}} UTC</div>
+						</div>
+						<div class="row">
+								<div class="col">
+										{{metar}}
+								</div>
+						</div>
+				</div>
+		</body>
+</html>
+
