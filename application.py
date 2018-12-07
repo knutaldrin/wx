@@ -32,8 +32,8 @@ def wx():
     setting_utc = next_setting.datetime().strftime("%H:%M")
     setting_lt = ephem.localtime(next_setting).strftime("%H:%M")
 
-    rising_time = "%s UTC (%s LT)" % (rising_utc, rising_lt)
-    setting_time = "%s UTC (%s LT)" % (setting_utc, setting_lt)
+    rising_time = "%sUTC (%sLT)" % (rising_utc, rising_lt)
+    setting_time = "%sUTC (%sLT)" % (setting_utc, setting_lt)
 
     return render_template('wx.html', rising=rising_time, setting=setting_time, metar=metar, metar_time="meh", taf=taf)
 
