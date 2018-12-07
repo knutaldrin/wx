@@ -4,7 +4,6 @@
 				<meta charset="utf-8">
 				<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 				<title>ENDU Wx</title>
-
 				<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		</head>
@@ -32,8 +31,7 @@
 				</div>
 				<div class="container">
 						<div class="row">
-								<div class="col bg-primary text-white">METAR</div>
-								<!--<div class="col">@ {{metar_time}} UTC</div>-->
+								<div class="col bg-primary text-white">METAR @ {{metar_time}}UTC ({{metar_ago}})</div>
 						</div>
 						<div class="row">
 								<div class="col">
@@ -41,8 +39,7 @@
 								</div>
 						</div>
 						<div class="row">
-								<div class="col bg-secondary text-white">TAF</div>
-								<!--<div class="col">@ {{metar_time}} UTC</div>-->
+								<div class="col bg-secondary text-white">TAF @ {{taf_time}}UTC ({{taf_ago}})</div>
 						</div>
 						<div class="row">
 								<div class="col">
@@ -51,6 +48,11 @@
 						</div>
 
 				</div>
+				<footer>
+						<div class="container bg-info text-light mt-5">
+								<p><small>METAR and TAF kindly provided by <a class="text-light" href="https://met.no/">Meteorologisk Institutt</a></small></p>
+						</div>
+				</footer>
 		</body>
 </html>
 
