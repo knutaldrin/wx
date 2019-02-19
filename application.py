@@ -28,12 +28,15 @@ def wx():
     setting_time = "%sUTC (%sLT)" % (setting_utc, setting_lt)
 
     ## METAR/TAF
+    
+    try:
+        metar_r = requests.get('https://api.met.no/weatherapi/tafmetar/1.0/?icao=ENDU&content_type=text/plain&content=metar')
+        taf_r = requests.get('https://api.met.no/weatherapi/tafmetar/1.0/?icao=ENDU&content_type=text/plain&content=taf')
+    except ConnectionError:
+        return '<h1>Cannot connect to met.no.</h1>'
 
-    r = requests.get('https://api.met.no/weatherapi/tafmetar/1.0/?icao=ENDU&content_type=text/plain&content=metar')
-    metar = r.text.strip().splitlines()[-1]
-
-    r = requests.get('https://api.met.no/weatherapi/tafmetar/1.0/?icao=ENDU&content_type=text/plain&content=taf')
-    taf = r.text.strip().splitlines()[-1]
+    metar = metar_r.text.strip().splitlines()[-1]
+    taf = taf_r.text.strip().splitlines()[-1]
 
     # Shittiest code ever, but works
     metar_hrs, metar_min = (int(metar[7:9]), int(metar[9:11]))
